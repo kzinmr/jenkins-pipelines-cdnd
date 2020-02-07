@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Upload to AWS"'
                 withAWS(region:'us-west-2',credentials:'aws-static') {
-                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'static')
+                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'jenkins-pipeline-cdnd-kzinmr')
                 }
             }
         }
